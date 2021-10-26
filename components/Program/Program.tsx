@@ -1,8 +1,16 @@
 import styles from './Program.module.scss';
+import {NormalizedCourse} from "../../pages/api/DataService/types";
+import Title from "./Title";
+import List from "./List";
 
-const Program = () => {
+interface ProgramProps {
+  data: NormalizedCourse
+}
+
+const Program = ({title, specializedSubjects}: NormalizedCourse) => {
   return <div className={styles.program}>
-    program
+    <Title title={title}/>
+    <List data={specializedSubjects}/>
   </div>
 }
 

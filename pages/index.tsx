@@ -4,6 +4,7 @@ import {NormalizedCourse} from "./api/DataService/types";
 import {InferGetStaticPropsType} from "next";
 import Container from "../components/Container";
 import Header from "../components/Header";
+import Program from "../components/Program";
 
 interface HomeProps {
   data: NormalizedCourse[],
@@ -19,7 +20,11 @@ const Home = ({homeProps}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <>
     <Header title='Специализированные дисциплины'/>
     <Container>
-      items
+      {
+        homeProps.data.map((program, index) => (
+          <Program key={program.title + index} {...program}/>
+        ))
+      }
     </Container>
   </>
 }
@@ -34,7 +39,6 @@ export const getStaticProps = async () => {
   await DataService.getCourses(5, 5)
     .then((res) => homeProps.data = res as NormalizedCourse[])
     .catch((err: DataServiceErrors) => homeProps.error = err as DataServiceErrors)
-
 
   return {
     props: {
