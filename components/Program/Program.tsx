@@ -1,7 +1,7 @@
-import styles from './Program.module.scss';
 import {NormalizedCourse} from "../../pages/api/DataService/types";
 import Title from "./Title";
 import List from "./List";
+import styles from './Program.module.scss';
 
 interface ProgramProps {
   data: NormalizedCourse

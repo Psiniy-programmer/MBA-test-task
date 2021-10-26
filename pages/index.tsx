@@ -1,7 +1,7 @@
+import {InferGetStaticPropsType} from "next";
 import {useEffect} from "react";
 import DataService, {DataServiceErrors} from "./api/DataService/DataService";
 import {NormalizedCourse} from "./api/DataService/types";
-import {InferGetStaticPropsType} from "next";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Program from "../components/Program";
@@ -36,7 +36,7 @@ export const getStaticProps = async () => {
     error: null
   }
 
-  await DataService.getCourses(5, 5)
+  await DataService.getCourses(5)
     .then((res) => homeProps.data = res as NormalizedCourse[])
     .catch((err: DataServiceErrors) => homeProps.error = err as DataServiceErrors)
 

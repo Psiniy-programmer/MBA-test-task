@@ -6,5 +6,7 @@
 
     /* bg colors */
     --color--bg-red: #FF3535;
-    --color--bg-black: #2D2C2A
+    --color--bg-black: #2D2C2A;
+    --color--bg-gray: #F7F7F7;
+    --color--bg-white: #FFFFFF;
 }

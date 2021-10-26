@@ -12,12 +12,12 @@ export enum DataServiceErrors {
 }
 
 class DataService implements IDataService{
-  async getCourses(countOfPrograms: number, countOfDisciplines: number): Promise<NormalizedCourse[] | DataServiceErrors> {
+  async getCourses(countOfPrograms: number): Promise<NormalizedCourse[] | DataServiceErrors> {
     try {
       const response = await axios.get(api.courses)
       const data = response.data as Data;
 
-      return normalizeCourse(data, countOfPrograms, countOfDisciplines);
+      return normalizeCourse(data, countOfPrograms);
     } catch (e) {
       return DataServiceErrors.COURSES;
     }

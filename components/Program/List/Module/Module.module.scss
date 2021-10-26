@@ -1,0 +1,47 @@
+$animation_duration: 0.5s;
+$max_container_height: 400px;
+
+.module {
+  display: flex;
+  flex-direction: column;
+
+  &__toggle {
+    padding: 14px 24px;
+    display: grid;
+    grid-template-columns: 18px auto;
+    column-gap: 27px;
+
+    font-family: StyreneAWebLight, sans-serif;
+    font-size: 18px;
+    line-height: 130%;
+    transition: color, background-color $animation_duration;
+
+    &__on {
+      color: var(--color--text-white);
+      background-color: var(--color--bg-red);
+    }
+
+    &__off {
+      color: var(--color--text-black-secondary);
+      background-color: var(--color--bg-gray);
+    }
+  }
+
+  &__list {
+    position: relative;
+    list-style-type: none;
+    display: grid;
+    background-color: var(--color--bg-white);
+    transition: all $animation_duration;
+
+    &_open {
+      opacity: 1;
+      max-height: $max_container_height;
+    }
+
+    &_closed {
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+}
