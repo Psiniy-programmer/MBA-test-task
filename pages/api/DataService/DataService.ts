@@ -11,7 +11,7 @@ export enum DataServiceErrors {
   COURSES
 }
 
-class DataService implements IDataService{
+class DataService implements IDataService {
   async getCourses(countOfPrograms: number): Promise<NormalizedCourse[] | DataServiceErrors> {
     try {
       const response = await axios.get(api.courses)

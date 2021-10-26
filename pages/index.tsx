@@ -5,8 +5,6 @@ import {NormalizedCourse} from "./api/DataService/types";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Program from "../components/Program";
-import Block from "../components/Info/Block";
-import {InfoColors} from "../components/Info/Block/Block";
 import Info from "../components/Info";
 
 interface HomeProps {

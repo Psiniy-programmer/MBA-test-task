@@ -8,7 +8,7 @@ import {Data, NormalizedCourse} from "./types";
 const normalizeCourse = (_data: Data, countOfPrograms: number): NormalizedCourse[] => {
   const resData: NormalizedCourse[] = [];
 
-  for (let i = 0 ; i < countOfPrograms; i++) {
+  for (let i = 0; i < countOfPrograms; i++) {
 
     const current = _data.data[i];
 
