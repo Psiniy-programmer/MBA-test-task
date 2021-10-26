@@ -19,6 +19,7 @@ const normalizeCourse = (_data: Data, countOfPrograms: number, countOfDiscipline
   const resData: NormalizedCourse[] = [];
 
   for (let i = 0 ; i < countOfPrograms; i++) {
+
     const current = _data.data[i];
 
     resData.push({

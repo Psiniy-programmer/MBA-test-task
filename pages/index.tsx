@@ -1,19 +1,47 @@
-import type { NextPage } from 'next'
-import styles from '../styles/Home.module.scss';
 import {useEffect} from "react";
-import DataService from "./api/DataService/DataService";
+import DataService, {DataServiceErrors} from "./api/DataService/DataService";
+import {NormalizedCourse} from "./api/DataService/types";
+import {InferGetStaticPropsType} from "next";
+import Container from "../components/Container";
+import Header from "../components/Header";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  data: NormalizedCourse[],
+  error: DataServiceErrors | null
+}
+
+const Home = ({homeProps}: InferGetStaticPropsType<typeof getStaticProps>) => {
 
   useEffect(() => {
-    DataService.getCourses(5, 5)
-      .then((res) => console.log(res))
-      .catch((err) => console.error(err))
-  }, [])
+    console.log('from static', homeProps);
+  }, [homeProps])
 
-  return (
-   <p className={styles.home}>kek</p>
-  )
+  return <>
+    <Header title='Специализированные дисциплины'/>
+    <Container>
+      items
+    </Container>
+  </>
 }
+
+export const getStaticProps = async () => {
+
+  const homeProps: HomeProps = {
+    data: [],
+    error: null
+  }
+
+  await DataService.getCourses(5, 5)
+    .then((res) => homeProps.data = res as NormalizedCourse[])
+    .catch((err: DataServiceErrors) => homeProps.error = err as DataServiceErrors)
+
+
+  return {
+    props: {
+      homeProps
+    },
+  }
+}
+
 
 export default Home

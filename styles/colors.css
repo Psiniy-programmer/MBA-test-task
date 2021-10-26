@@ -1,0 +1,10 @@
+:root {
+    /* text colors */
+    --color--text-black-primary: #000000;
+    --color--text-black-secondary: #262626;
+    --color--text-white: #FFFFFF;
+
+    /* bg colors */
+    --color--bg-red: #FF3535;
+    --color--bg-black: #2D2C2A
+}

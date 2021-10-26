@@ -1,0 +1,14 @@
+@import "styles/mixins";
+
+.header {
+  @include mobileContainer();
+  margin-top: 28px;
+  margin-bottom: 34px;
+
+  &__title {
+    font-family: StyreneAWebMedium, sans-serif;
+    font-size: 28px;
+    line-height: 120%;
+    color: var(--color--text-black-secondary);
+  }
+}
