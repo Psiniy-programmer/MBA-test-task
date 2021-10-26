@@ -5,6 +5,9 @@ import {NormalizedCourse} from "./api/DataService/types";
 import Container from "../components/Container";
 import Header from "../components/Header";
 import Program from "../components/Program";
+import Block from "../components/Info/Block";
+import {InfoColors} from "../components/Info/Block/Block";
+import Info from "../components/Info";
 
 interface HomeProps {
   data: NormalizedCourse[],
@@ -20,11 +23,14 @@ const Home = ({homeProps}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return <>
     <Header title='Специализированные дисциплины'/>
     <Container>
-      {
-        homeProps.data.map((program, index) => (
-          <Program key={program.title + index} {...program}/>
-        ))
-      }
+      <>
+        {
+          homeProps.data.map((program, index) => (
+            <Program key={program.title + index} {...program}/>
+          ))
+        }
+        <Info/>
+      </>
     </Container>
   </>
 }

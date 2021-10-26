@@ -1,0 +1,18 @@
+.info {
+  margin: 44px 0;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 23px;
+
+  &__list {
+    display: grid;
+    row-gap: 15px;
+    padding-bottom: 31px !important;
+
+    & > * {
+      font-family: StyreneAWebLight, sans-serif;
+      font-size: 20px;
+      line-height: 130%;
+    }
+  }
+}

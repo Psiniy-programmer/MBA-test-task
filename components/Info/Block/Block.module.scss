@@ -1,0 +1,27 @@
+.red {
+  background-color: var(--color--bg-red);
+}
+
+.black {
+  background-color: var(--color--bg-black);
+}
+
+.block {
+  padding: 30px 17px;
+  display: grid;
+  grid-template-rows: auto auto;
+  row-gap: 25px;
+  color: var(--color--text-white);
+
+  &__title {
+    font-family: StyreneAWebBold, sans-serif;
+    font-size: 25px;
+    line-height: 120%;
+  }
+
+  &__text {
+    font-family: StyreneAWebLight, sans-serif;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}

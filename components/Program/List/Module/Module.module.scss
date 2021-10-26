@@ -28,6 +28,12 @@ $max_container_height: 400px;
   }
 
   &__list {
+    & > * {
+      font-family: StyreneAWebLight, sans-serif;
+      font-size: 15px;
+      line-height: 130%;
+    }
+
     position: relative;
     list-style-type: none;
     display: grid;
@@ -46,24 +52,6 @@ $max_container_height: 400px;
       margin-top: 0 !important;
       opacity: 0;
       max-height: 0;
-    }
-  }
-}
-
-.list {
-  &__item {
-    padding-left: 15px;
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content: '';
-      width: 5px;
-      height: 5px;
-      border-radius: 2.5px;
-      background-color: var(--color--bg-red);
-      top: 9px;
-      left: 0;
     }
   }
 }

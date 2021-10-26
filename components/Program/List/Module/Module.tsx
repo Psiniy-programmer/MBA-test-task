@@ -63,7 +63,7 @@ const Module = ({specializedSubjects, moduleTitle}: ModuleProps) => {
       {
         specializedSubjects.map((subject) => (
           <li
-            className={styles.list__item}
+            className='listTextWithDot'
             key={subject}
           >
             {subject}

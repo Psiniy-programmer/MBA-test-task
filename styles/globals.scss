@@ -1,0 +1,32 @@
+html,
+body,
+#__next {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+* {
+  font-family: StyreneAWebRegular, sans-serif;
+}
+
+.listTextWithDot {
+  font-family: inherit;
+  padding-left: 15px;
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 2.5px;
+    background-color: var(--color--bg-red);
+    top: 9px;
+    left: 0;
+  }
+}
