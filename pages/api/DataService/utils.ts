@@ -14,9 +14,8 @@ const trimDisciplines = (disciplines: string[], count: number): string[] => {
  * @param _data {Data} - Исходные данные
  * @param countOfPrograms - Количество программ, которые хотим оставить
  * @param countOfDisciplines - Количество дисциплин, которые хотим оставить
- * @constructor
  */
-const NormalizeCourse = (_data: Data, countOfPrograms: number, countOfDisciplines: number): NormalizedCourse[] => {
+const normalizeCourse = (_data: Data, countOfPrograms: number, countOfDisciplines: number): NormalizedCourse[] => {
   const resData: NormalizedCourse[] = [];
 
   for (let i = 0 ; i < countOfPrograms; i++) {
@@ -31,4 +30,4 @@ const NormalizeCourse = (_data: Data, countOfPrograms: number, countOfDiscipline
   return resData;
 };
 
-export default NormalizeCourse;
+export default normalizeCourse;

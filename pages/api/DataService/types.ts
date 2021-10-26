@@ -1,3 +1,6 @@
+/**
+ * Модель запрашиваемых всех данных с api
+ */
 export type Data = {
   success: boolean,
   count: number,
