@@ -7,10 +7,10 @@ interface ListProps {
 
 const List = ({data}: ListProps) => {
   if (data.length === 10) {
-    return <div className={styles.double}>
+    return <ul className={styles.double}>
       <Module moduleTitle='1 модуль' specializedSubjects={data.slice(0, 5)}/>
       <Module moduleTitle='2 модуль' specializedSubjects={data.slice(5, 10)}/>
-    </div>
+    </ul>
   } else {
     return <div className={styles.single}>
       <Module moduleTitle='Модуль' specializedSubjects={data}/>

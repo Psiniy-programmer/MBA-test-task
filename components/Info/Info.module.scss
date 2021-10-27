@@ -1,13 +1,27 @@
+@import "styles/mixins";
+
 .info {
   margin: 44px 0;
   display: grid;
   grid-template-rows: auto auto;
   row-gap: 23px;
 
+  @include desktopBreakpoint() {
+    grid-template-rows: unset;
+    row-gap: unset;
+    margin: 141px 0;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+  }
+
   &__list {
     display: grid;
     row-gap: 15px;
     padding-bottom: 31px !important;
+
+    @include desktopBreakpoint() {
+      padding-bottom: 0 !important;
+    }
 
     & > * {
       font-family: StyreneAWebLight, sans-serif;

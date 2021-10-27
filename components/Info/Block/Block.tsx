@@ -18,12 +18,12 @@ const Block = ({color, children, title}: InfoProps) => {
     color === InfoColors.BLACK ? styles.black : styles.red
   )
 
-  return <div className={infoClasses}>
+  return <article className={infoClasses}>
     <h3 className={styles.block__title}>{title}</h3>
     <div className={styles.block__text}>
       {children}
     </div>
-  </div>
+  </article>
 }
 
 export default Block;

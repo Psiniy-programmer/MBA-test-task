@@ -49,7 +49,7 @@ const Module = ({specializedSubjects, moduleTitle}: ModuleProps) => {
     }
   }
 
-  return <div className={styles.module}>
+  return <li className={styles.module}>
     <div className={toggleClasses} onClick={handleClick}>
       <div className={styles.toggle__img}>
         <Image
@@ -73,7 +73,7 @@ const Module = ({specializedSubjects, moduleTitle}: ModuleProps) => {
         ))
       }
     </ul>
-  </div>
+  </li>
 }
 
 export default Module;
