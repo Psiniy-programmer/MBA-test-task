@@ -1,5 +1,4 @@
 import {InferGetStaticPropsType} from "next";
-import {useEffect} from "react";
 import DataService, {DataServiceErrors} from "./api/DataService/DataService";
 import {NormalizedCourse} from "./api/DataService/types";
 import Container from "../components/Container";
@@ -13,11 +12,6 @@ interface HomeProps {
 }
 
 const Home = ({homeProps}: InferGetStaticPropsType<typeof getStaticProps>) => {
-
-  useEffect(() => {
-    console.log('from static', homeProps);
-  }, [homeProps])
-
   return <>
     <Header title='Специализированные дисциплины'/>
     <Container>
