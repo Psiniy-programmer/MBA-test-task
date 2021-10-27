@@ -2,3 +2,14 @@
   max-width: 345px;
   margin: 0 auto;
 }
+
+@mixin desktopContainer() {
+  max-width: 1258px;
+  margin: 0 auto;
+}
+
+@mixin desktopBreakpoint() {
+  @media (min-width: 1920px) {
+    @content
+  }
+}

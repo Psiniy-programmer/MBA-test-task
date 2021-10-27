@@ -1,20 +1,28 @@
+@import 'styles/mixins';
+
 $animation_duration: 0.5s;
 $max_container_height: 400px;
 
 .module {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+
+  @include desktopBreakpoint() {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 81px;
+  }
 
   &__toggle {
     padding: 14px 24px;
     display: grid;
     grid-template-columns: 18px auto;
     column-gap: 27px;
-
     font-family: StyreneAWebLight, sans-serif;
     font-size: 18px;
     line-height: 130%;
     transition: color, background-color $animation_duration;
+
 
     &__on {
       color: var(--color--text-white);
@@ -24,6 +32,17 @@ $max_container_height: 400px;
     &__off {
       color: var(--color--text-black-secondary);
       background-color: var(--color--bg-gray);
+    }
+
+    @include desktopBreakpoint() {
+      padding: unset;
+      grid-template-columns: auto;
+      column-gap: unset;
+      font-family: StyreneAWebRegular, sans-serif;
+      font-size: 32px;
+      line-height: 120%;
+      color: var(--color--text-black-primary);
+      background-color: inherit;
     }
   }
 
@@ -45,6 +64,12 @@ $max_container_height: 400px;
       margin-top: 17px !important;
       opacity: 1;
       max-height: $max_container_height;
+
+      @include desktopBreakpoint() {
+        margin-top: unset !important;
+        opacity: unset;
+        max-height: unset;
+      }
     }
 
     &_closed {
@@ -52,6 +77,40 @@ $max_container_height: 400px;
       margin-top: 0 !important;
       opacity: 0;
       max-height: 0;
+
+      @include desktopBreakpoint() {
+        z-index: unset;
+        margin-top: unset !important;
+        opacity: unset;
+        max-height: unset;
+      }
+    }
+  }
+}
+
+.toggle {
+  &__title {
+    @include desktopBreakpoint() {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        content: '';
+        z-index: 1;
+        top: -30px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color--bg-red);
+      }
+    }
+  }
+
+  &__img {
+    display: inline-grid;
+
+    @include desktopBreakpoint() {
+      display: none;
     }
   }
 }

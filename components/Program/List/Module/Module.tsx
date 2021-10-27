@@ -51,13 +51,15 @@ const Module = ({specializedSubjects, moduleTitle}: ModuleProps) => {
 
   return <div className={styles.module}>
     <div className={toggleClasses} onClick={handleClick}>
-      <Image
-        src={moduleState.imgPath}
-        alt={moduleState.altText}
-        width={18}
-        height={18}
-      />
-      <p>{moduleTitle}</p>
+      <div className={styles.toggle__img}>
+        <Image
+          src={moduleState.imgPath}
+          alt={moduleState.altText}
+          width={18}
+          height={18}
+        />
+      </div>
+      <h4 className={styles.toggle__title}>{moduleTitle}</h4>
     </div>
     <ul className={listClasses}>
       {

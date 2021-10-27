@@ -1,4 +1,20 @@
-.list {
+@import "styles/mixins";
+
+%list {
+  margin: 30px 0;
+}
+
+.single {
+}
+
+.double {
+  @extend %list;
   display: grid;
   row-gap: 10px;
+
+  @include desktopBreakpoint() {
+    row-gap: unset;
+    grid-template-columns: auto auto;
+    column-gap: 45px;
+  }
 }

@@ -4,10 +4,24 @@
   @include mobileContainer();
   margin-top: 28px;
 
+  @include desktopBreakpoint() {
+    @include desktopContainer();
+    margin-top: 71px;
+    margin-bottom: 59px;
+  }
+
   &__title {
     font-family: StyreneAWebMedium, sans-serif;
     font-size: 28px;
     line-height: 120%;
     color: var(--color--text-black-secondary);
+
+    @include desktopBreakpoint() {
+      font-family: StyreneAWeb-Bold, sans-serif;
+      font-size: 36px;
+      line-height: 120%;
+      color: var(--color--text-black-primary);
+      text-align: center;
+    }
   }
 }

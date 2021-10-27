@@ -3,4 +3,8 @@
 .container {
   @include mobileContainer();
   height: 100%;
+
+  @include desktopBreakpoint() {
+    @include desktopContainer;
+  }
 }
